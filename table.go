@@ -636,6 +636,11 @@ func (t *Table) GetOffset() (row, column int) {
 	return t.rowOffset, t.columnOffset
 }
 
+// GetVisibleCount returns the number of visible rows and columns.
+func (t *Table) GetVisibleCount() (int, int) {
+	return t.visibleRows, len(t.visibleColumnIndices)
+}
+
 // SetEvaluateAllRows sets a flag which determines the rows to be evaluated when
 // calculating the widths of the table's columns. When false, only visible rows
 // are evaluated. When true, all rows in the table are evaluated.
